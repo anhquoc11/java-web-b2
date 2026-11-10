@@ -24,16 +24,16 @@
     <span>${user.dob}</span><br>
 
     <label>Heard From:</label>
-    <span>${user.heardFrom}</span><br>
+    <span>${survey.heardFrom}</span><br>
 
     <label>Wants Updates:</label>
-    <span>${user.wantsUpdates}</span><br>
+    <span>${survey.wantsUpdates}</span><br>
 
     <label>Email Offers:</label>
-    <span>${user.emailOffers}</span><br>
+    <span>${survey.emailOffers}</span><br>
 
     <label>Contact Via:</label>
-    <span>${user.contactVia}</span><br>
+    <span>${survey.contactVia}</span><br>
 
     <p>To enter another survey, click on the Return button shown below.</p>
 

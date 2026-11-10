@@ -1,5 +1,6 @@
 package com.example.studentapp.controller;
 
+import com.example.studentapp.entity.Survey;
 import com.example.studentapp.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -45,9 +46,11 @@ public class EmailListServlet extends HttpServlet {
                 emailOffers = "Yes";
             }
 
-            User user = new User(firstName, lastName, email, dob, heardFrom, wantsUpdates, emailOffers, contactVia);
+            User user = new User(firstName, lastName, email, dob);
+            Survey survey = new Survey(heardFrom, wantsUpdates, emailOffers, contactVia);
 
             request.setAttribute("user", user);
+            request.setAttribute("survey", survey);
             url = "/thanks.jsp";
         }
 
