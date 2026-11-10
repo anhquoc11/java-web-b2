@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+h1 {
+    color: DodgerBlue;
+}
+
+label {
+    display: inline-block;
+    width: 8em;
+    margin-bottom: 0.5em;
+}
+
+input[type="text"], input[type="email"], input[type="date"], select {
+    width: 15em;
+    margin-bottom: 0.5em;
+    padding: 3px;
+}
+
+input[type="radio"] + label, input[type="checkbox"] + label {
+    width: auto;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    padding: 5px 15px;
+    cursor: pointer;
+}
