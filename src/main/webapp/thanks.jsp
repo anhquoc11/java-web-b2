@@ -37,7 +37,7 @@
 
     <p>To enter another survey, click on the Return button shown below.</p>
 
-    <form action="survey" method="post">
+    <form action="emailList" method="post">
         <input type="hidden" name="action" value="join">
         <input type="submit" value="Return">
     </form>

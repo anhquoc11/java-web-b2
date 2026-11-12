@@ -15,15 +15,18 @@ public class EmailListServlet extends HttpServlet {
                           HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = "/index.html";
+        String url = "/index.jsp";
 
         String action = request.getParameter("action");
         if (action == null) {
             action = "join";
         }
 
+        System.out.println("EmailListServlet action: " + action);
+        log("EmailListServlet action: " + action);
+
         if (action.equals("join")) {
-            url = "/index.html";
+            url = "/index.jsp";
         } else if (action.equals("add")) {
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
@@ -49,9 +52,19 @@ public class EmailListServlet extends HttpServlet {
             User user = new User(firstName, lastName, email, dob);
             Survey survey = new Survey(heardFrom, wantsUpdates, emailOffers, contactVia);
 
+            String message;
+            if (firstName == null || lastName == null || email == null ||
+                    firstName.trim().isEmpty() || lastName.trim().isEmpty() || email.trim().isEmpty()) {
+                message = "Please fill out all three text boxes.";
+                url = "/index.jsp";
+            } else {
+                message = "";
+                url = "/thanks.jsp";
+            }
+
             request.setAttribute("user", user);
             request.setAttribute("survey", survey);
-            url = "/thanks.jsp";
+            request.setAttribute("message", message);
         }
 
         getServletContext()

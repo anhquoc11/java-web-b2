@@ -11,22 +11,24 @@
     <h1><b>Survey</b></h1>
     <p>If you have a moment, we'd appreciate it if you would fill out this <br> survey.</p>
 
-    <form action="survey" method="post">
+    <p style="color: red;"><i>${message}</i></p>
+
+    <form action="emailList" method="post">
         <input type="hidden" name="action" value="add">
 
         <h1>Your information</h1>
         
         <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" required><br>
+        <input type="text" id="firstName" name="firstName" value="${user.firstName}"><br>
 
         <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" required><br>
+        <input type="text" id="lastName" name="lastName" value="${user.lastName}"><br>
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required><br>
+        <input type="email" id="email" name="email" value="${user.email}"><br>
 
         <label for="dob">Date of Birth</label>
-        <input type="date" id="dob" name="dob"><br>
+        <input type="date" id="dob" name="dob" value="${user.dob}"><br>
 
         <h1>How did you hear about us</h1>
         <input type="radio" id="search" name="heardFrom" value="Search engine" checked>
